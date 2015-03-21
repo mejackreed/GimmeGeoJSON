@@ -16,8 +16,8 @@ var gimmeGeojson = (function() {
     if (options.typeNames === undefined) {
       throw new Error('You need to provide typeNames');
     }
-    if (options.maxFeatures === undefined) {
-      options.maxFeatures = 100000;
+    if (options.count === undefined) {
+      options.count = 100000;
     }
 
     var params = {
@@ -25,7 +25,7 @@ var gimmeGeojson = (function() {
       version: '2.0.0',
       request: 'GetFeature',
       typeNames: options.typeNames,
-      maxFeatures: options.maxFeatures,
+      count: options.count,
       outputFormat: 'application/json'
     };
 

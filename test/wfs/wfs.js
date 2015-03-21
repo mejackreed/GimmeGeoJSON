@@ -5,15 +5,15 @@ describe('gimmeGeojson', function() {
         wfsUrl: 'http://www.example.com/wfs',
         typeNames: 'my:data'
       }))
-      .toBe('http://www.example.com/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=my:data&maxFeatures=100000&outputFormat=application/json');
+      .toBe('http://www.example.com/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=my:data&count=100000&outputFormat=application/json');
     });
     it('uses provided maxFeatures', function() {
       expect(gimmeGeojson.wfs({
         wfsUrl: 'http://www.example.com/wfs',
         typeNames: 'my:data',
-        maxFeatures: 2
+        count: 2
       }))
-      .toBe('http://www.example.com/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=my:data&maxFeatures=2&outputFormat=application/json');
+      .toBe('http://www.example.com/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=my:data&count=2&outputFormat=application/json');
     });
     it('checks for a wfsUrl parameter', function() {
       expect(function() {
