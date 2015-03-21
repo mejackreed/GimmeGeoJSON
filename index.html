@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
+  </head>
+  <body>
+    <div class='container'>
+      <h1>Gimme GeoJSON</h1>
+      <div class='row'>
+        <h2>WFS to GeoJSON</h2>
+        <form id='wfsForm'>
+          <div class='row'>
+            <label for='wfsUrl'>WFS URL</label>
+            <input class='u-full-width' type='url' data-parsley-type='url' placeholder='http://www.example.com/wfs' id='wfsUrl' required>
+            <div class='row'>
+              <div class='six columns'>
+                <label form='typeNames'>Name of the feature type</label>
+                <input class='u-full-width' type='text' placeholder='workspace:layername' id='typeNames' required>
+              </div>
+            </div>
+            
+          </div>
+          <input class="button-primary" type="submit" value="Gimme Geojson">
+        </form>
+        <div id='wfsResult' style='display:none;'>
+          <textArea class='u-full-width' id='wfsResultText'></textArea>
+          <!-- <a id='wfsGeojsonIo' target='_blank' class='button'>View on GeoJSON.io</a> -->
+        </div>
+        
+        
+      </div>
+      
+    </div>
+    
+    <script src='src/gimmeGeojson.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.0.7/parsley.min.js'></script>
+    <script src='example/example.js'></script>
+  </body>
+</html>
+
